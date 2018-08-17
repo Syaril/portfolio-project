@@ -1,6 +1,7 @@
 
 <!doctype html>
 <html lang="en">
+{% load staticfiles %}
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,9 +26,9 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ml-auto">
-              <a class="nav-item nav-link" href="#">Twitter</a>
-              <a class="nav-item nav-link" href="#">Resume</a>
-              <a class="nav-item nav-link" href="#">Blog</a>
+              <a class="nav-item nav-link" href="https://twitter.com/syarilezzuddeen">Twitter</a>
+              <a class="nav-item nav-link" href="{% static 'fake_resume.pdf' %}">Resume</a>
+              <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
             </div>
           </div>
         </nav>
@@ -43,25 +44,28 @@
             <a href="mailto:dr.syaril@gmail.com" class="btn btn-primary my-2">Email Me</a>
             <a href="#" class="btn btn-secondary my-2">Check out the Blog</a>
           </p>
+            <img class="card-img-top mini" src="{% static 'mini_profile_pic.JPG' %}" />
         </div>
+
       </section>
 
       <div class="album py-5 bg-light">
         <div class="container">
+                  <div class="row">
         {%  for job in jobs.all %}
-        {%  for job in jobs.all %}
-          <div class="row">
+
             <div class="col-md-4">
               <div class="card mb-4 shadow-sm">
-                <img class="image-fluid" src="{{ job.image.url }}" alt="{{ job.image }}"/>
+                <img class="class-img-top" src="{{ job.image.url }}" alt="{{ job.image }}"/>
                 <div class="card-body">
                   <p class="card-text">{{ job.summary }}</p>
                 </div>
               </div>
             </div>
-          </div>
+
 
         {% endfor %}
+                  </div>
         </div>
       </div>
 
