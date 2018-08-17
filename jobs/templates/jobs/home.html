@@ -20,7 +20,7 @@
 
     <header>
          <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-          <a class="navbar-brand" href="#">SYARIL EZZUDDEEN</a>
+          <a class="navbar-brand" href="{% url 'home' %}">SYARIL EZZUDDEEN</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -44,19 +44,19 @@
             <a href="mailto:dr.syaril@gmail.com" class="btn btn-primary my-2">Email Me</a>
             <a href="#" class="btn btn-secondary my-2">Check out the Blog</a>
           </p>
-            <img class="card-img-top mini" src="{% static 'mini_profile_pic.JPG' %}" />
+            <img src="{% static 'profile_pic.jpg' %}" height="200" />
         </div>
 
       </section>
 
-      <div class="album py-5 bg-light">
+      <div class="album py-3 bg-light">
         <div class="container">
                   <div class="row">
         {%  for job in jobs.all %}
 
             <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img class="class-img-top" src="{{ job.image.url }}" alt="{{ job.image }}"/>
+              <div class="card-mb-4 shadow-sm">
+                <img class="card-img-top" src="{{ job.image.url }}" alt="{{ job.image }}" height="300" width="300"/>
                 <div class="card-body">
                   <p class="card-text">{{ job.summary }}</p>
                 </div>
