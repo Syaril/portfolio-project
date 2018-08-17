@@ -27,45 +27,46 @@
             <div class="navbar-nav ml-auto">
               <a class="nav-item nav-link" href="#">Twitter</a>
               <a class="nav-item nav-link" href="#">Resume</a>
-              <a class="nav-item nav-link" href="#">Blog</a>
+              <a class="nav-item nav-link active" href="#">Blog</a>
             </div>
           </div>
         </nav>
     </header>
 
-    <main role="main">
+<main role="main">
+    <div class="album py-7 bg-light">
+            <div class="container">
+        <h1 class="text-center pt-3">Welcome to Syaril's Blog</h1>
+        <br/>
+        <br/>
+        <h2 class="text-left pt-3">LATEST POSTS</h2>
+        <br/>
+        <br/>
+        <hr/>
+            <div class="container">
+            {% for blog in getblogs.all %}
+                <div class="row">
+                    <div class="col-md-6">
 
-      <section class="jumbotron text-center">
-        <div class="container">
-          <h1 class="jumbotron-heading">Hi, I'm Syaril.</h1>
-          <p class="lead text-muted">Hey, my name is Syaril Ezzuddeen. I'm a doctor learning python web development to deliver better healthcare services for my patients.</p>
-          <p>
-            <a href="mailto:dr.syaril@gmail.com" class="btn btn-primary my-2">Email Me</a>
-            <a href="#" class="btn btn-secondary my-2">Check out the Blog</a>
-          </p>
-        </div>
-      </section>
+                            <h3 class="card-title">{{ blog.title }}</h3>
+                            <h6>{{ blog.pub_date_pretty }}</h6>
 
-      <div class="album py-5 bg-light">
-        <div class="container">
-        {%  for job in jobs.all %}
-        {%  for job in jobs.all %}
-          <div class="row">
-            <div class="col-md-4">
-              <div class="card mb-4 shadow-sm">
-                <img class="image-fluid" src="{{ job.image.url }}" alt="{{ job.image }}"/>
-                <div class="card-body">
-                  <p class="card-text">{{ job.summary }}</p>
+                            <p class="card-text">{{ blog.summary }}</p>
+
+                    </div>
+                    <div class="col-md-4">
+                        <img class="card-img-top" src="{{ blog.image.url }}"/>
+
+                    </div>
                 </div>
-              </div>
+                <br/>
+                <br/>
+                <hr/>
+                {% endfor %}
             </div>
-          </div>
-
-        {% endfor %}
         </div>
-      </div>
-
-    </main>
+    </div>
+</main>
 
     <footer class="text-muted">
         <div class="container">
