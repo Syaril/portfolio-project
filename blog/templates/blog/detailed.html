@@ -31,13 +31,20 @@
         </nav>
 </header>
 <main role="main">
+         <section class="jumbotron text-center">
+        <div class="container">
+          <h1 class="jumbotron-heading">{{ blog.title }}</h1>
+        </div>
+
+      </section>
+    <div class="album py-7 bg-light">
            <div class="container">
 
                 <div class="row">
                     <div class="col-md-6">
 
-                            <a href="{% url 'detail' blog.id %}"><h3 class="card-title">{{ blog.title }}</h3></a>
-                            <h6>{{ blog.pub_date_pretty }}</h6>
+                            <a href="{% url 'detail' blog.id %}"><h3 class="card-title"></h3></a>
+                            <h2>{{ blog.pub_date_pretty }}</h2>
                             <p class="card-text">{{ blog.body }}</p>
 
                     </div>
@@ -46,6 +53,11 @@
 
                     </div>
                 </div>
+               <br/>
+               <br/>
+               <hr/>
+           </div>
+    </div>
 </main>
    <footer class="text-muted">
         <div class="container">
