@@ -37,10 +37,16 @@
                         {% csrf_token %}
                         <input type="hidden"/>
                         </form>
+                        <a class="nav-item nav-link" href="{% url 'allblogs' %}">Entries</a>
+                        <a class="nav-item nav-link  btn btn-primary" href="{% url 'create' %}">Create</a>
                     {% else %}
                         <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                         <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
+                        <a class="nav-item nav-link" href="{% static 'fake_resume.pdf' %}">Resume</a>
+
                     {% endif %}
+
+
                 </div>
               </div>
          </div>

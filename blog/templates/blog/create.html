@@ -1,10 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+    {{ error }}
+<form method="POST" action="{% url 'create' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label>Entry</label>
+    <br/>
+    <input type="text" name="title"/>
+    <br/>
+    <label>Notes</label>
+    <br/>
+    <input type="text" name="body" height="50"/>
+    <br/>
+    <label>Images</label>
+    <br/>
+    <input type="file" name="image" class="file-upload">
+    <br/>
+    <br/>
+    <label>Declaration of Confidentiality:</label>
+    <br/>
+    <input type="checkbox" name="is_important"/>
+    <br/>
+    <br/>
+    <input type="submit" class="btn btn-primary"/>
+    <br/>
+    <br/>
+</form>
+{% endblock %}
