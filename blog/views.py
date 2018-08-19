@@ -7,8 +7,9 @@ from .models import Blog
 
 @login_required
 def allblogs(request):
-    getblogs = Blog.objects.filter(user__username=request.user)
-    return render(request, 'blog/allblogs.html', {'getblogs': getblogs})
+    user=request.user
+    getblogs = Blog.objects.filter(user__username=user)
+    return render(request, 'blog/allblogs.html', {'getblogs': getblogs, 'username':user})
 
 @login_required
 def detail(request, blog_id):
