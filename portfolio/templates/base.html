@@ -24,7 +24,7 @@
          <div class="container">
               <a class="navbar-brand" href="{% url 'home' %}">
              <img src="{% static 'doctor.png' %}" class="d-inline-block align-top" height="32" width="32"/>
-              THE PILLARMEN
+              THIS IS A PROTOTYPE WEB APP
               </a>
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,6 +43,7 @@
                         <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                         <a class="nav-item nav-link" href="{% url 'signup' %}">Sign Up</a>
                         <a class="nav-item nav-link" href="{% static 'fake_resume.pdf' %}">Resume</a>
+                        <a class="nav-item nav-link" href="https://twitter.com/syarilezzuddeen">Twitter</a>
 
                     {% endif %}
 
@@ -61,11 +62,11 @@
         {% endblock %}
         </div>
     </body>
-
-    <footer class="text-muted">
+    <footer class="text-muted bg-dark">
         <div class="container">
           <p>©️ Syaril Ezzuddeen {%  now "Y" %}</p>
             <div>Icons made by <a href="https://www.flaticon.com/authors/popcorns-arts" title="Icon Pond">Icon Pond</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+            <div>Images courtesy of <a href="https://commons.wikimedia.org/wiki/Main_Page" title="Wikimedia Commons">Wikimedia Commons</a>.</div>
       </div>
     </footer>
 
