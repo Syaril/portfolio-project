@@ -18,14 +18,14 @@
 
       </section>
 
-      <div class="album py-3 bg-light">
+      <div class="album py-5 bg-light">
         <div class="container">
                   <div class="row">
-        {%  for job in jobs.all %}
+        {%  for job in jobs.all %} 
 
             <div class="col-md-4">
-              <div class="card-mb-4 shadow-sm">
-                <img class="card-img-top" src="{{ job.image.url }}" alt="{{ job.image }}" height="300" width="300"/>
+              <div class="card mb-4 box-shadow">
+                <img class="card-img-top" src="{{ job.image.url }}" alt="{{ job.image }}"/>
                 <div class="card-body">
                   <p class="card-text">{{ job.summary }}</p>
                 </div>
